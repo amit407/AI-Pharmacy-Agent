@@ -16,9 +16,9 @@ LLM - OpenAI
 
 Database - json files - medications, users
 
-UI is a simple browser-based interface served by fastAPI.
+UI - simple browser-based interface served by fastAPI.
 
-This UI ables to interact with the agent and display real time responses
+The UI allowes users to interact with the agent and display real time responses
 users can type random questions, and streaming answers are displayed from the agent.
 Agent logic - once getting a text from the user, it detects an intent, if a user asks for dosage, usage, stock availability, to see his prescription etc.
 if there is an intent for internal information, then it uses its tools, and databases to reply the correct answer.
@@ -33,7 +33,7 @@ tool outputs are injected as a system messages.
 The LLM never accesses the database directly.
 
 # Functions Documentations
-tool - get_stock
+##tool - get_stock
 
 retrieve the current stock availability for a given medication.
 
@@ -46,7 +46,7 @@ Error handling - if the med is not found in the database returns: {"error": "med
 Fallback behavior - if med not in DB, the agent will respond using general knowledge without using tools.
 
 
-tool - get_dosage
+##tool - get_dosage
 
 returns dosage instructions for a given medication.
 
@@ -59,7 +59,7 @@ Error handling - if the med is not found in the database returns: {"error": "med
 Fallback behavior - if dosage is missing, returns "N/A" and the agent clarifies limitations.
 
 
-tool - get_active_ingridient
+##tool - get_active_ingridient
 
 return the active ingridient of a given medication.
 
@@ -72,7 +72,7 @@ Error handling - error response
 Fallback behavior - if med not in DB, the agent will respond using general knowledge without using tools.
 
 
-tool get_user_prescription
+##tool get_user_prescription
 
 Return the prescription list for a verified user.
 
