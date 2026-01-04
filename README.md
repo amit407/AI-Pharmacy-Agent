@@ -33,7 +33,8 @@ tool outputs are injected as a system messages.
 The LLM never accesses the database directly.
 
 # Functions Documentations
-#tool - get_stock
+
+## tool - get_stock
 
 retrieve the current stock availability for a given medication.
 
@@ -46,7 +47,7 @@ Error handling - if the med is not found in the database returns: {"error": "med
 Fallback behavior - if med not in DB, the agent will respond using general knowledge without using tools.
 
 
-#tool - get_dosage
+## tool - get_dosage
 
 returns dosage instructions for a given medication.
 
@@ -59,7 +60,7 @@ Error handling - if the med is not found in the database returns: {"error": "med
 Fallback behavior - if dosage is missing, returns "N/A" and the agent clarifies limitations.
 
 
-#tool - get_active_ingridient
+## tool - get_active_ingridient
 
 return the active ingridient of a given medication.
 
@@ -72,7 +73,7 @@ Error handling - error response
 Fallback behavior - if med not in DB, the agent will respond using general knowledge without using tools.
 
 
-#tool get_user_prescription
+## tool get_user_prescription
 
 Return the prescription list for a verified user.
 
