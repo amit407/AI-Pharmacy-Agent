@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "name": "Paracetamol",
+    "hebrew_name": "פרצטמול",
+    "active_ingredient": "Acetaminophen",
+    "dosage": "500mg every 6 hours",
+    "stock": 25,
+    "prescription_required": false
+  },
+  {
+    "id": 2,
+    "name": "Ibuprofen",
+    "hebrew_name": "איבופרופן",
+    "active_ingredient": "Ibuprofen",
+    "dosage": "200mg every 8 hours",
+    "stock": 12,
+    "prescription_required": false
+  },
+  {
+    "id": 3,
+    "name": "Amoxicillin",
+    "hebrew_name": "אמוקסיצילין",
+    "active_ingredient": "Amoxicillin",
+    "dosage": "500mg every 12 hours",
+    "stock": 5,
+    "prescription_required": true
+  },
+  {
+    "id": 4,
+    "name": "Cough Syrup",
+    "hebrew_name": "סירופ שיעול",
+    "active_ingredient": "Dextromethorphan",
+    "dosage": "10ml every 8 hours",
+    "stock": 18,
+    "prescription_required": false
+  },
+  {
+    "id": 5,
+    "name": "Antibiotic",
+    "hebrew_name": "אנטיביוטיקה",
+    "active_ingredient": "Antibiotic",
+    "dosage": "250mg every 8 hours",
+    "stock": 7,
+    "prescription_required": true
+  }
+]

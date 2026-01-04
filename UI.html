@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pharmacy AI Assistant</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 40px auto; }
+        #chat { border: 1px solid #ccc; padding: 10px; height: 400px; overflow-y: auto; }
+        .user { color: blue; margin: 5px 0; }
+        .bot { color: green; margin: 5px 0; }
+        input, button { padding: 10px; margin-top: 10px; width: 100%; box-sizing: border-box; }
+    </style>
+</head>
+<body>
+    <h1>Pharmacy AI Assistant</h1>
+    <div id="chat"></div>
+    <input type="text" id="messageInput" placeholder="Type your message..." />
+    <button id="sendBtn">Send</button>
+
+    <script>
+        const chatDiv = document.getElementById("chat");
+        const messageInput = document.getElementById("messageInput");
+        const sendBtn = document.getElementById("sendBtn");
+
+        async function sendMessage() {
+            const userMessage = messageInput.value.trim();
+            if (!userMessage) return;
+
+            // Show user message
+            const userDiv = document.createElement("div");
+            userDiv.className = "user";
+            userDiv.textContent = "You: " + userMessage;
+            chatDiv.appendChild(userDiv);
+
+            messageInput.value = "";
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+
+            // Create a div for bot response
+            const botDiv = document.createElement("div");
+            botDiv.className = "bot";
+            botDiv.textContent = "Bot: ";
+            chatDiv.appendChild(botDiv);
+            chatDiv.scrollTop = chatDiv.scrollHeight;
+
+            // Call FastAPI endpoint with streaming
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userMessage })
+            });
+
+            const reader = response.body.getReader();
+            const decoder = new TextDecoder();
+            let done = false;
+
+            while (!done) {
+                const { value, done: readerDone } = await reader.read();
+                done = readerDone;
+                if (value) {
+                    botDiv.textContent += decoder.decode(value);
+                    chatDiv.scrollTop = chatDiv.scrollHeight;
+                }
+            }
+        }
+
+        sendBtn.addEventListener("click", sendMessage);
+        messageInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") sendMessage();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+  { "id": 1, "name": "Shiri Levi", "hebrew_name": "שירי לוי", "age": 28, "prescription":  ["Paracetamol", "Ibuprofen"]},
+  { "id": 2, "name": "Mor Cohen", "hebrew_name": "מור כהן", "age": 34, "prescription": ["Amoxicillin"]},
+  { "id": 3, "name": "Dana Katz", "hebrew_name": "דנה כץ", "age": 45, "prescription": ["Cough Syrup", "Paracetamol"] },
+  { "id": 4, "name": "Daniel Efraim", "hebrew_name": "דניאל אפרים", "age": 22, "prescription": []},
+  { "id": 5, "name": "Roi Shavit", "hebrew_name": "רועי שביט", "age": 51,"prescription": ["Antibiotic", "Cough Syrup"] },
+  { "id": 6, "name": "Or Ben Baruch", "hebrew_name": "אור בן ברוך", "age": 30, "prescription": ["Antibiotic"]},
+  { "id": 7, "name": "Itamar Peretz", "hebrew_name": "איתמר פרץ", "age": 40, "prescription": []},
+  { "id": 8, "name": "Ohad Loya", "hebrew_name": "אוהד לויה", "age": 19, "prescription": ["Cough Syrup"]},
+  { "id": 9, "name": "Eden Frank", "hebrew_name": "עדן פרנק", "age": 27, "prescription": ["Cough Syrup"]},
+  { "id": 10, "name": "Rotem Ziv", "hebrew_name": "רותם זיו", "age": 36, "prescription": []}
+]
