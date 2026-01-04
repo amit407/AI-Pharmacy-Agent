@@ -87,9 +87,9 @@ Fallback behavior - No fallback to AI-generated prescriptions, safety decision.
 
 
 # How to run
-build docker image - docker build -t ai-agent .
+build docker image - docker build -t ai-pharmacy-agent .
 
-run docker - docker run -p 8000:8000 ai-agent
+run docker - docker run -p 8000:8000 ai-pharmacy-agent
 
 open browser - http://127.0.0.1:8000
 
