@@ -85,6 +85,14 @@ Error handling - if user not found in DB, error message requsting correct and fu
 Fallback behavior - No fallback to AI-generated prescriptions, safety decision.
 
 
+# How to run
+build docker image - docker build -t ai-agent .
+
+run docker - docker run -p 8000:8000 ai-agent
+
+open browser - http://127.0.0.1:8000
+
+
 # Multi step flows
 Flow 1 - medication Availability 
 
@@ -115,11 +123,29 @@ Flow 3 - Medication Dosage
 6. agent responds in the user's language
 
 
-## Evidence
+# Evidence
 
 <img width="855" height="715" alt="Screenshot 2026-01-03 182503" src="https://github.com/user-attachments/assets/2a2a1193-8625-4d4c-88a1-64fe4ce77c16" />
 
 
 <img width="967" height="708" alt="Screenshot 2026-01-03 183519" src="https://github.com/user-attachments/assets/5be4d770-63e3-4519-bcbb-b1debd30e848" />
+
+
+# Evaluation
+
+each flow should is tested-
+
+to verify tools outputs match the DB values. (to ensure no made up values are displayed)
+
+to confirm correct intent detection, and correct tool invocation, and ensure logic.
+
+test both hebrew and english
+
+test unknown medications, test incorrect user names - check error responses
+
+test that no medical advice is given
+
+ensure tools are preffered but if didnt find intention and tools are not needed - confirm AI generated responses
+
 
 
