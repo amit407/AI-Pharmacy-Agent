@@ -9,9 +9,13 @@ both in hebrew and english.
 
 # Architecture
 Backend language - Python
+
 Backend framework - FastAPI
+
 LLM - OpenAI
+
 Database - json files - medications, users
+
 The UI is a simple browser-based interface served by fastAPI.
 the UI ables to interact with the agent and display real time responses
 users can type random questions, and streaming answers are displayed from the agent.
