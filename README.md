@@ -16,8 +16,9 @@ LLM - OpenAI
 
 Database - json files - medications, users
 
-The UI is a simple browser-based interface served by fastAPI.
-the UI ables to interact with the agent and display real time responses
+UI is a simple browser-based interface served by fastAPI.
+
+This UI ables to interact with the agent and display real time responses
 users can type random questions, and streaming answers are displayed from the agent.
 Agent logic - once getting a text from the user, it detects an intent, if a user asks for dosage, usage, stock availability, to see his prescription etc.
 if there is an intent for internal information, then it uses its tools, and databases to reply the correct answer.
